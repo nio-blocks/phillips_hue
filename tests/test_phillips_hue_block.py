@@ -7,13 +7,12 @@ from ..phillips_hue_block import PhillipsHue
 class TestPhillipsHue(NIOBlockTestCase):
 
     def test_process_signals(self):
-        """Signals pass through block unmodified."""
         blk = PhillipsHue()
         self.configure_block(blk, {})
         blk.start()
-        blk.process_signals([Signal({"hello": "nio"})])
+        blk.process_signals([Signal({})])
         blk.stop()
         self.assert_num_signals_notified(1)
         self.assertDictEqual(
             self.last_notified[DEFAULT_TERMINAL][0].to_dict(),
-            {"hello": "nio"})
+            {})
