@@ -1,40 +1,62 @@
 {
-  "namespace/BlockName": {
-    "version": "1.0.0",
-    "description": "Description of the block.",
+  "nio/PhillipsHue": {
+    "version": "0.1.0",
+    "description": "This block will control the color of Phillips Hue lights through a hub on the same network, using the Phillips Hue API.",
+    "categories": [],
     "properties": {
-      "<property1>": {
-        "description": "Required description of the property"
+      "bri": {
+        "title": "Brightness (1-254)",
+        "type": "IntType",
+        "description": "Brightness of the bulb.",
+        "default": 1
       },
-      "<property2>": {
-        "default": "Optional metadata with any key.",
-        "description": "Required description of the property"
+      "hub_ip": {
+        "title": "Hub IP Address",
+        "type": "StringType",
+        "description": "IP Address of the Hub, must be on the same network.",
+        "default": "[[IP]]"
+      },
+      "hue": {
+        "title": "Hue (0-65535)",
+        "type": "IntType",
+        "description": "The hue value is a wrapping value between 0 and 65535. Both 0 and 65535 are red, 25500 is green and 46920 is blue.",
+        "default": 0
+      },
+      "light_number": {
+        "title": "Light Number",
+        "type": "IntType",
+        "description": "Which light connected to the hub to control.",
+        "default": 2
+      },
+      "on_state": {
+        "title": "1 for on 0 for off",
+        "type": "IntType",
+        "description": "Turn the bulb on or off.",
+        "default": 0
+      },
+      "sat": {
+        "title": "Saturation (0-254)",
+        "type": "IntType",
+        "description": "Saturation of the bulb, with 0 being white and 254 being most color.",
+        "default": 0
+      },
+      "user_id": {
+        "title": "User ID",
+        "type": "StringType",
+        "description": "The user id assigned by the hub.",
+        "default": "[[ID]]"
       }
     },
     "inputs": {
-      "<input1 | default>": {
-        "description": "Required description of the input"
-      },
-      "<input2>": {
-        "description": "Required description of the input"
+      "default": {
+        "description": "Any list of signals."
       }
     },
     "outputs": {
-      "<output1 | default>": {
-        "description": "Required description of the output"
-      },
-      "<output2>": {
-        "description": "Required description of the output"
+      "default": {
+        "description": ""
       }
     },
-    "commands": {
-      "<command1>": {
-        "description": "Required description of the command",
-        "type": "Optional type and other metadata with any key."
-      },
-      "<command2>": {
-        "description": "Required description of the command"
-      }
-    }
+    "commands": {}
   }
 }
