@@ -2,7 +2,6 @@ PhillipsHue
 ===========
 This block will control the color of Phillips Hue lights through a hub on the same network, using the Phillips Hue API. The IP address of the hub, and a User ID are required to access the light via the API. Information on how to obtain these values can be found [here.](https://developers.meethue.com/documentation/getting-started)
 
-Example Color Values:
 | Color | Hue | Saturation | Brightness |
 | ----- | :---: | :---: | :---: |
 | Red | 65535 | 254 | 254 |
