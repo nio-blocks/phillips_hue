@@ -1,7 +1,7 @@
 {
   "nio/PhillipsHue": {
     "language": "Python",
-    "url": "git://github.com/ssclay/phillips_hue.git",
+    "url": "git://github.com/nio-blocks/phillips_hue.git",
     "version": "0.1.0"
   }
 }
