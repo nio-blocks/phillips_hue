@@ -4,47 +4,32 @@
     "description": "This block will control the color of Phillips Hue lights through a hub on the same network, using the Phillips Hue API.",
     "categories": [],
     "properties": {
-      "bri": {
-        "title": "Brightness (1-254)",
-        "type": "IntType",
-        "description": "Brightness of the bulb.",
-        "default": 1
+      "hub_config": {
+        "title": "Hub Configuration",
+        "type": "ObjectType",
+        "description": "Configuration for the Hub. IP address of the hub. Your unique user id obtained from the API and the light to control.",
+        "default": {
+          "hub_ip": "[[HUB_IP]]",
+          "user_id": "[[USER_ID]]",
+          "light_number": 2
+        }
       },
-      "hub_ip": {
-        "title": "Hub IP Address",
-        "type": "StringType",
-        "description": "IP Address of the Hub, must be on the same network.",
-        "default": "[[IP]]"
+      "kill_switch": {
+        "title": "Turn off Light at Service Stop?",
+        "type": "BoolType",
+        "description": "When selected this will turn off the light when the nio service stops.",
+        "default": true
       },
-      "hue": {
-        "title": "Hue (0-65535)",
-        "type": "IntType",
-        "description": "The hue value is a wrapping value between 0 and 65535. Both 0 and 65535 are red, 25500 is green and 46920 is blue.",
-        "default": 0
-      },
-      "light_number": {
-        "title": "Light Number",
-        "type": "IntType",
-        "description": "Which light connected to the hub to control.",
-        "default": 2
-      },
-      "on_state": {
-        "title": "1 for on 0 for off",
-        "type": "IntType",
-        "description": "Turn the bulb on or off.",
-        "default": 0
-      },
-      "sat": {
-        "title": "Saturation (0-254)",
-        "type": "IntType",
-        "description": "Saturation of the bulb, with 0 being white and 254 being most color.",
-        "default": 0
-      },
-      "user_id": {
-        "title": "User ID",
-        "type": "StringType",
-        "description": "The user id assigned by the hub.",
-        "default": "[[ID]]"
+      "light_config": {
+        "title": "Light Configuration",
+        "type": "ObjectType",
+        "description": "Configuration for the power and color of the light. on_state, hue, sat, and brightness are integers that describe the power and color of the light.",
+        "default": {
+          "on_state": 0,
+          "hue": 0,
+          "sat": 254,
+          "bri": 254
+        }
       }
     },
     "inputs": {
@@ -54,7 +39,7 @@
     },
     "outputs": {
       "default": {
-        "description": ""
+        "description": "Same list of signals."
       }
     },
     "commands": {}
