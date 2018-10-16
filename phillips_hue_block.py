@@ -51,7 +51,7 @@ class PhillipsHue(Block):
         self.notify_signals(signals)
 
     def stop(self):
-        if self.kill_switch:
+        if self.kill_switch():
             self.api_url = 'http://{0}/api/{1}/lights/{2}/state'.format(
                     self.hub_config().hub_ip(),
                     self.hub_config().user_id(),
