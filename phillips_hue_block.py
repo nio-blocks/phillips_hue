@@ -47,3 +47,13 @@ class PhillipsHue(Block):
             self.logger.debug(self.data)
 
         self.notify_signals(signals)
+
+    def stop(self):
+        self.api_url = 'http://{0}/api/{1}/lights/{2}/state'.format(
+                    self.hub_config().hub_ip(),
+                    self.hub_config().user_id(),
+                    self.hub_config().light_number())
+        self.data["on"] = False
+        x = requests.put(self.api_url, json=self.data)
+        self.logger.debug(x.text)
+        super().stop()
