@@ -22,7 +22,7 @@ class LightConfig(PropertyHolder):
 
 class PhillipsHue(Block):
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("1.0.1")
     hub_config = ObjectProperty(
         HubConfig, title='Hub Configuration', default=HubConfig())
     light_config = ObjectProperty(
