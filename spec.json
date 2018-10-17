@@ -2,7 +2,9 @@
   "nio/PhillipsHue": {
     "version": "0.1.0",
     "description": "This block will control the color of Phillips Hue lights through a hub on the same network, using the Phillips Hue API.",
-    "categories": [],
+    "categories": [
+      "Hardware"
+    ],
     "properties": {
       "hub_config": {
         "title": "Hub Configuration",
